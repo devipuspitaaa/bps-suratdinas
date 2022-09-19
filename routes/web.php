@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 Route::get('/', function () {
     return view('dashboard');
@@ -28,3 +30,11 @@ Route::get('/pertanian', function () {
 Route::get('/ekonomi', function () {
     return view('ekonomi.index');
 });
+
+// Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+route::get('/login',[LoginController::class,'halamanlogin'])->name('login');
+route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
+
