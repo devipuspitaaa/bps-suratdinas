@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>Prodeskel</title>
+  <title>Surat Dinas BPS Kota Madiun | Dashboard</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
@@ -54,7 +54,7 @@
           <span class="nav-item-head">Pages</span>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/">
+          <a class="nav-link" href="/dashboard">
             <i class="mdi mdi-compass-outline menu-icon"></i>
             <span class="menu-title">Dashboard</span>
           </a>
@@ -62,20 +62,15 @@
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
             <i class="mdi mdi-crosshairs-gps menu-icon"></i>
-            <span class="menu-title">Potensi Prodeskel</span>
+            <span class="menu-title">Biodata</span>
             <i class="menu-arrow"></i>
           </a>
           <div class="collapse" id="ui-basic">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <a class="nav-link" href="/sdm">Sumber Daya Manusia</a>
+                <a class="nav-link" href="/pegawai">Pegawai</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/pertanian">Pertanian</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/ekonomi">Ekonomi</a>
-              </li>
+              
             </ul>
           </div>
         </li>

@@ -15,16 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
 });
+route::get('/',[LoginController::class,'halamanlogin'])->name('login');
+route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
 
 Route::get('/sdm', function () {
     return view('sdm.index');
 });
 
-Route::get('/pertanian', function () {
-    return view('pertanian.index');
+Route::get('/pegawai', function () {
+    return view('pegawai.index');
 });
 
 Route::get('/ekonomi', function () {
@@ -35,6 +37,5 @@ Route::get('/ekonomi', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-route::get('/login',[LoginController::class,'halamanlogin'])->name('login');
-route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
+
 
