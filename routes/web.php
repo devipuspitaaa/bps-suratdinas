@@ -33,9 +33,5 @@ Route::get('/ekonomi', function () {
     return view('ekonomi.index');
 });
 
-// Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 
 
