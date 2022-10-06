@@ -13,7 +13,7 @@
       </li>
       <li class="nav-item pt-3">
         <a class="nav-link d-block" href="/">
-          <img class="sidebar-brand-logo" width="160px" src="{{ asset('assets/images/prodeskel.png') }}" alt="" />
+          <img class="sidebar-brand-logo" width="160px" src="{{ asset('assets/images/1.png') }}" alt="" />
         </a>
 
       </li>
