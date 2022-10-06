@@ -1,28 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="icon" type="image/png" href="{{ asset('assets/iamges/bps.png') }}">
-  <title>SIPUTNAS</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="{{ asset('assets/vendors/jquery-bar-rating/css-stars.css') }}" />
-  <link rel="stylesheet" href="{{ asset('assets/vendors/font-awesome/css/font-awesome.min.css') }}" />
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <!-- endinject -->
-  <!-- Layout styles -->
-  <link rel="stylesheet" href="{{ asset('assets/css/demo_1/style.css') }}" />
-  <!-- End layout styles -->
-  <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />
-</head>
+@include('layouts.header')
 
 <body>
   <div class="container-scroller">
@@ -32,6 +11,7 @@
     </div>
     <!-- partial:partials/_sidebar.html -->
     <!-- navbar -->
+<<<<<<< HEAD
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <ul class="nav">
         <li class="nav-item nav-profile border-bottom">
@@ -83,17 +63,15 @@
         </li>
       </ul>
     </nav> 
+=======
+    @include('layouts.sidebar')
+>>>>>>> 5a71600e759fb845975d47fdddd4b584eb6fe7d9
     <!-- end navbar -->
     <!-- partial -->
     @yield('content')
     <!-- page-body-wrapper ends -->
     <!-- partial:partials/_footer.html -->
-    <footer class="footer">
-      <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved.</span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
-      </div>
-    </footer>
+    @include('layouts.footer')
     <!-- partial -->
   </div>
   <!-- main-panel ends -->
