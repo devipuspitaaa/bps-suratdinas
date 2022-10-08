@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,8 +30,16 @@ Route::get('/pegawai', function () {
     return view('pegawai.index');
 });
 
-Route::get('/ekonomi', function () {
-    return view('ekonomi.index');
+
+
+Route::get("/pengujian-template", function() {
+
+    return view('percobaan');
+});
+
+Route::get("pembuatan-password", function() {
+
+    echo Hash::make("pegawai123");
 });
 
 

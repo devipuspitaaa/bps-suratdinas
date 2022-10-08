@@ -47,5 +47,20 @@
           </ul>
         </div>
       </li>
+      <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#apps" aria-expanded="false" aria-controls="apps">
+              <i class="mdi mdi-monitor-dashboard menu-icon"></i>
+              <span class="menu-title">App Pages</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="apps">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pages/apps/kanban-board.html">kanban-board</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/apps/todo.html">Todo List</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/apps/tickets.html">Tickets</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/apps/chats.html">Chats</a></li>
+              </ul>
+            </div>
+          </li>
     </ul>
   </nav> 
