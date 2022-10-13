@@ -168,16 +168,14 @@
             <!-- partial -->
             <div class="main-panel">
 
-              
 
-              <!-- end navbar -->
-              <!-- partial -->
-              @yield('content')
-              <!-- page-body-wrapper ends -->
-              <!-- partial:partials/_footer.html -->
 
-              <!-- main-panel ends -->
+                <!-- end navbar -->
+                <!-- partial -->
+                @yield('content')
+                <!-- page-body-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
 
-            @include('layouts.footer')
+                <!-- main-panel ends -->
 
-            
+                @include('layouts.footer')
