@@ -23,6 +23,6 @@ class CheckRole
             }
         }
 
-        return redirect('/dashboard');
+        return redirect('/home');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -21,9 +22,14 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
-Auth::routes();
+// Auth::routes();
+
+/** Login */
 route::get('/',[LoginController::class,'halamanlogin'])->name('login');
 route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
+
+/** Register */
+route::get('/register',[RegisterController::class,'halamanRegister'])->name('register');
 
 Route::get('/sdm', function () {
     return view('sdm.index');
@@ -45,13 +51,5 @@ Route::get("pembuatan-password", function() {
     echo Hash::make("pegawai123");
 });
 
-
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
