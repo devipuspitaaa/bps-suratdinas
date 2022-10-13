@@ -2,10 +2,9 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArsipSuratTable extends Migration
+class CreateTamplateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +13,12 @@ class CreateArsipSuratTable extends Migration
      */
     public function up()
     {
-        Schema::create('arsip_surat', function (Blueprint $table) {
+        Schema::create('tamplate', function (Blueprint $table) {
             $table->id();
-            $table->string('nomor_surat');
             $table->string('jenis_surat');
-            $table->string('perihal');
+            $table->string('file_surat');
             $table->timestamps();
         });
-
-        DB::statement("ALTER TABLE arsip_surat ADD file_surat MEDIUMBLOB");
     }
 
     /**
@@ -32,6 +28,6 @@ class CreateArsipSuratTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('arsip_surat');
+        Schema::dropIfExists('tamplate');
     }
 }

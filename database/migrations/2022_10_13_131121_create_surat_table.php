@@ -22,6 +22,7 @@ class CreateSuratTable extends Migration
             $table->string('kepada');
             $table->string('untuk');
             $table->string('isi');
+            $table->string('status');
             $table->timestamps();
         });
     }
