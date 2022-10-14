@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\LoginController;
-// use App\Http\Controllers\RegisterController;
+// use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\RegisterController;
 USE App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
@@ -33,9 +34,13 @@ Route::get('/sdm', function () {
     return view('sdm.index');
 });
 
+/** Pegawai */
+Route::resource('pegawai', PegawaiController::class);
 Route::get('/pegawai', function () {
     return view('pegawai.index');
 });
+
+
 
 Route::get("/pengujian-template", function() {
 
@@ -46,6 +51,3 @@ Route::get("pembuatan-password", function() {
 
     echo Hash::make("pegawai123");
 });
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
