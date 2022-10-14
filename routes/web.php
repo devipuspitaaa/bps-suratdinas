@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PegawaiController;
+// use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\RegisterController;
+USE App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -23,14 +24,11 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
-// Auth::routes();
+Auth::routes();
 
 /** Login */
 route::get('/',[LoginController::class,'halamanlogin'])->name('login');
 route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
-
-/** Register */
-route::get('/register',[RegisterController::class,'halamanRegister'])->name('register');
 
 Route::get('/sdm', function () {
     return view('sdm.index');
@@ -43,6 +41,13 @@ Route::get('/pegawai', function () {
 });
 Route::get('/createPegawai', function () {
     return view('pegawai.create');
+});
+
+
+
+Route::get("/pengujian-template", function() {
+
+    return view('percobaan');
 });
 
 Route::get("pembuatan-password", function() {
