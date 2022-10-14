@@ -41,6 +41,9 @@ Route::resource('pegawai', PegawaiController::class);
 Route::get('/pegawai', function () {
     return view('pegawai.index');
 });
+Route::get('/createPegawai', function () {
+    return view('pegawai.create');
+});
 
 Route::get("pembuatan-password", function() {
 

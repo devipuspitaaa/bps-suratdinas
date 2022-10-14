@@ -25,7 +25,7 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        //
+        return view('pegawai.create');
     }
 
     /**
@@ -36,7 +36,23 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        Pegawai::create([
+            'email' => $request->email,
+            'nama_lengkap' => $request->nama_lengkap,
+            'nip' => $request->nip,
+            'no_ktp' => $request->no_ktp,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'foto' => $request->foto,
+            'user_id' => $request->user_id,
+        ]);
+
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        // return 'Data Berhasil Ditambahkan';
+        return redirect()->route('pegawai.index')
+            ->with('success', 'Data Berhasil Ditambahkan');
+        
     }
 
     /**
