@@ -60,7 +60,7 @@
 					</div>
 				</form>
 				<div class="col-14 mb-2">
-					<a a href="{{ url('/register') }}" class="btn btn-block btn-danger">
+					<a href="{{ url('/register') }}" class="btn btn-block btn-danger">
 						<i type="submit"></i> Register
 					</a>
 				</div>
