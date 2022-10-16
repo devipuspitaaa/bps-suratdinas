@@ -2,8 +2,6 @@
 
 use App\Http\Controllers\LoginController;
 // use App\Http\Controllers\PegawaiController;
-use App\Http\Controllers\RegisterController;
-USE App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -27,8 +25,11 @@ Route::get('/dashboard', function () {
 Auth::routes();
 
 /** Login */
-route::get('/',[LoginController::class,'halamanlogin'])->name('login');
+route::get('/registrasi',[LoginController::class,'registrasi'])->name('registrasi');
+route::post('/simpanregistrasi',[LoginController::class,'simpanregistrasi'])->name('simpanregistrasi');
 route::post('/postlogin',[LoginController::class,'postlogin'])->name('postlogin');
+route::get('/',[LoginController::class,'halamanlogin'])->name('login');
+
 
 Route::get('/sdm', function () {
     return view('sdm.index');

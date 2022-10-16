@@ -60,7 +60,7 @@
 					</div>
 				</form>
 				<div class="col-14 mb-2">
-					<a href="{{ url('/register') }}" class="btn btn-block btn-danger">
+					<a href="{{ url('/registrasi') }}" class="btn btn-block btn-danger">
 						<i type="submit"></i> Register
 					</a>
 				</div>
@@ -68,9 +68,7 @@
 				<p class="mb-1">
 					<a href="forgot-password.html">I forgot my password</a>
 				</p>
-				<p class="mb-0">
-					<a href="{{ url('/register') }}" class="text-center">Register</a>
-				</p>
+				
 			</div>
 		</div>
 	</div>
