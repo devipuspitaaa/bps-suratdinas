@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Registration Page</title>
+    <title>SIPUTNAS | Registration Page</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,12 +26,13 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
+
 <body class="hold-transition register-page">
     <div class="register-box">
         <div class="register-logo">
             <h1><b>SIPUTNAS</b></h1>
-			<h3>Sistem Informasi Pembuatan Surat Dinas</h3>
-			<h3>BPS Kota Madiun</h3>
+            <h3>Sistem Informasi Pembuatan Surat Dinas</h3>
+            <h3>BPS Kota Madiun</h3>
         </div>
 
         <div class="card">
@@ -87,8 +96,14 @@
 
     <!-- jQuery -->
     <script src="{{ asset('AdminLte/plugins/jquery/jquery.min.js') }}"></script>
-	<script src="{{ asset('AdminLte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-	<script src="{{ asset('AdminLte/dist/js/adminlte.min.js?v=3.2.0') }}"></script>
+    <script src="{{ asset('AdminLte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('AdminLte/dist/js/adminlte.min.js?v=3.2.0') }}"></script>
+    <script>
+        @if(Session::has('success'))
+            toastr.success("{{ session('success') }}")
+        @endif
+    </script>
 </body>
 </body>
+
 </html>

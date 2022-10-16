@@ -25,16 +25,15 @@ class LoginController extends Controller
 
     public function simpanregistrasi(Request $request){
         // dd($request->all());
+        $input = $request->all();
 
-        User::create([
-            'username' => $request->username,
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-            'remember_token' => Str::random(60),
-        ]);
+        User::create($input);
+        return back()->with('success','Success! user added');
 
-        return view('dashboard');
+    }
 
+    public function logout(){
+        Auth::logout();
+        return redirect ('/');
     }
 }
