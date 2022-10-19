@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pegawai;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PegawaiController extends Controller
 {
@@ -37,21 +38,24 @@ class PegawaiController extends Controller
     public function store(Request $request)
     {
         
-        Pegawai::create([
+        $dataPegawai = [
+
             'email' => $request->email,
             'nama_lengkap' => $request->nama_lengkap,
             'nip' => $request->nip,
             'no_ktp' => $request->no_ktp,
             'jenis_kelamin' => $request->jenis_kelamin,
             'tanggal_lahir' => $request->tanggal_lahir,
-            'foto' => $request->foto,
-            'user_id' => $request->user_id,
-        ]);
+        ];
+
+        DB::table('pegawai')->insert( $dataPegawai );
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         // return 'Data Berhasil Ditambahkan';
-        return redirect()->route('pegawai.index')
+        return redirect()->route('pegawai')
             ->with('success', 'Data Berhasil Ditambahkan');
+
+        // return redirect('/pegawai');
         
     }
 
