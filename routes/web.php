@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PegawaiController;
 // use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
@@ -38,12 +39,16 @@ Route::get('/sdm', function () {
 
 /** Pegawai */
 Route::resource('pegawai', PegawaiController::class);
-Route::get('/pegawai', function () {
-    return view('pegawai.index');
-});
+// Route::get('/pegawai', function () {
+//     return view('pegawai.index');
+// });
+
+// pembenahan
+Route::get('/pegawai', [PegawaiController::class, 'index']);
 Route::get('/createPegawai', function () {
     return view('pegawai.create');
 });
+Route::post('/proses-simpan-pegawai', [PegawaiController::class, 'store']);
 
 
 

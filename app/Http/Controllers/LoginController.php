@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 
@@ -25,10 +27,30 @@ class LoginController extends Controller
 
     public function simpanregistrasi(Request $request){
         // dd($request->all());
-        $input = $request->all();
 
-        User::create($input);
-        return back()->with('success','Success! user added');
+
+
+        // $input = $request->all();
+
+        // User::create($input);
+        // return back()->with('success','Success! user added');
+
+        $dataUser = array(
+
+            'username'  => $request->username,
+            'email'     => $request->email,
+            'password'  => Hash::make( $request->password ),
+            'role'      => "pegawai"
+        );
+        $user_id = DB::table('users')->insertGetId($dataUser);
+
+        $dataPegawai = array(
+
+            'nama_lengkap' => $request->name,
+            'user_id'      => $user_id
+        );
+        DB::table('pegawai')->insert($dataPegawai);
+        return redirect('/');
 
     }
 
