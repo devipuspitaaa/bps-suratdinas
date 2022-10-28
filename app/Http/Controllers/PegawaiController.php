@@ -75,7 +75,8 @@ class PegawaiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pegawai = Pegawai::find($id);
+        return view('pegawai.edit', compact('pegawai'));
     }
 
     /**
@@ -87,7 +88,14 @@ class PegawaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pegawai = Pegawai::find($id);
+        $pegawai-> email = $request->email;
+        $pegawai-> nama_lengkap = $request->nama_lengkap;
+        $pegawai-> nip = $request->nip;
+        $pegawai->save();
+
+        return redirect()->route('pegawai.index')
+            ->with('success', 'Data Berhasil Dirubah');
     }
 
     /**
@@ -98,6 +106,8 @@ class PegawaiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Pegawai::find($id)->delete();
+        return redirect()->route('pegawai.index')
+            ->with('success', 'Data Berhasil Dihapus');
     }
 }

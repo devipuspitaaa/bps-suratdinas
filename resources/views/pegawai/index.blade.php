@@ -3,12 +3,6 @@
 <div class="content-wrapper">
   <div class="page-header">
     <h3 class="page-title"> Master Data Pegawai </h3>
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Tables</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Data table</li>
-      </ol>
-    </nav>
   </div>
   <div class="card">
     <div class="card-body">
@@ -50,8 +44,8 @@
                         <td>{{ $pgw->nip }}</td>
                         <td>{{ $pgw->foto }}</td>
                         <td>
-                          <form action="#" method="POST">
-                            <a class="btn btn-primary" href="#">Edit</a>
+                          <form action="{{ route('pegawai.destroy',$pgw->id) }}" method="POST">
+                            <a class="btn btn-primary" href="{{ route('pegawai.edit',$pgw->id)}}">Edit</a>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete</button>

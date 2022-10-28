@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
-// use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -33,31 +32,6 @@ route::get('/',[LoginController::class,'halamanlogin'])->name('login');
 route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 
-Route::get('/sdm', function () {
-    return view('sdm.index');
-});
-
 /** Pegawai */
 Route::resource('pegawai', PegawaiController::class);
-// Route::get('/pegawai', function () {
-//     return view('pegawai.index');
-// });
-
-// pembenahan
-Route::get('/pegawai', [PegawaiController::class, 'index']);
-Route::get('/createPegawai', function () {
-    return view('pegawai.create');
-});
-Route::post('/proses-simpan-pegawai', [PegawaiController::class, 'store']);
-
-
-
-Route::get("/pengujian-template", function() {
-
-    return view('percobaan');
-});
-
-Route::get("pembuatan-password", function() {
-
-    echo Hash::make("pegawai123");
-});
+Route::post("pegawai/update/{id}", [PegawaiController::class, 'update']);
