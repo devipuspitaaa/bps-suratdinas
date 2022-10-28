@@ -26,31 +26,34 @@ class LoginController extends Controller
     }
 
     public function simpanregistrasi(Request $request){
-        // dd($request->all());
+        User::create([
+            'username' => $request->username,
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'remember_token' => Str::random(60),
+        ]);
 
+        return back()->with('success','Success! user added');
 
+        // $dataUser = array(
 
-        // $input = $request->all();
+        //     'name'  => $request->name,
+        //     'username'  => $request->username,
+        //     'email'     => $request->email,
+        //     'password'  => Hash::make( $request->password ),
+        //     'role'      => "pegawai"
+        // );
+        // $user_id = DB::table('users')->insertGetId($dataUser);
 
-        // User::create($input);
-        // return back()->with('success','Success! user added');
+        // $dataPegawai = array(
 
-        $dataUser = array(
-
-            'username'  => $request->username,
-            'email'     => $request->email,
-            'password'  => Hash::make( $request->password ),
-            'role'      => "pegawai"
-        );
-        $user_id = DB::table('users')->insertGetId($dataUser);
-
-        $dataPegawai = array(
-
-            'nama_lengkap' => $request->name,
-            'user_id'      => $user_id
-        );
-        DB::table('pegawai')->insert($dataPegawai);
-        return redirect('/');
+        //     'nama_lengkap' => $request->name,
+        //     'user_id'      => $user_id,
+        //     'email'        => $request->email
+        // );
+        // DB::table('pegawai')->insert($dataPegawai);
+        return view ('/');
 
     }
 

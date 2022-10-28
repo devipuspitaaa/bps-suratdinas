@@ -37,7 +37,7 @@
 
         <div class="card">
             <div class="card-body register-card-body">
-                <p class="login-box-msg">Register a new membership</p>
+                <p class="login-box-msg">Register Pegawai</p>
 
                 <form action="{{ route('simpanregistrasi') }}" method="post">
                     {{ csrf_field() }}
@@ -84,9 +84,7 @@
                         <!-- /.col -->
                     </div>
                 </form>
-
-
-                <a href="{{ route('login') }}" class="text-center">I already have a membership</a>
+                Sudah mempunyai akun,<a href="{{ route('login') }}" class="text-center"> Login</a>
 
             </div>
             <!-- /.form-box -->

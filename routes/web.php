@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
-Auth::routes();
+// Auth::routes();
 
 /** Login */
 route::get('/registrasi',[LoginController::class,'registrasi'])->name('registrasi');
