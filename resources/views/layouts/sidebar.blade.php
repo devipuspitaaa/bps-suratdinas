@@ -36,5 +36,24 @@
         </ul>
       </div>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <i class="mdi mdi-account-card-details menu-icon"></i>
+        <span class="menu-title">Profile</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#surat" aria-expanded="false" aria-controls="surat">
+        <i class="mdi mdi-email menu-icon"></i>
+        <span class="menu-title">Surat</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="surat">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="/pegawai">Pembuatan Surat</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Pengajuan Surat</a></li>
+        </ul>
+      </div>
+    </li>
   </ul>
 </nav>
