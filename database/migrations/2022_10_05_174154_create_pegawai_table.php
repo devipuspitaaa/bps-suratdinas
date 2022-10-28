@@ -18,9 +18,6 @@ class CreatePegawaiTable extends Migration
             $table->string('email');
             $table->string('nama_lengkap');
             $table->string('nip');
-            $table->string('no_ktp');
-            $table->enum('jenis_kelamin', ['Laki-Laki', 'Perempuan'])->default('Laki-Laki');
-            $table->date('tanggal_lahir');
             $table->string('foto');
             $table->timestamps();
         });

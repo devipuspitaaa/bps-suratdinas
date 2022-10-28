@@ -43,9 +43,6 @@ class PegawaiController extends Controller
             'email' => $request->email,
             'nama_lengkap' => $request->nama_lengkap,
             'nip' => $request->nip,
-            'no_ktp' => $request->no_ktp,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'tanggal_lahir' => $request->tanggal_lahir,
         ];
 
         DB::table('pegawai')->insert( $dataPegawai );

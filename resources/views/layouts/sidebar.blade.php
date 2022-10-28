@@ -35,11 +35,5 @@
         </ul>
       </div>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <i class="mdi mdi-pen menu-icon"></i>
-        <span class="menu-title">Pengajuan Surat</span>
-      </a>
-    </li>
   </ul>
 </nav>

@@ -38,9 +38,6 @@
                         <th class="sorting_asc" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Order #: activate to sort column descending" style="width: 60.8125px;">E-mail</th>
                         <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 105.328px;">Nama Lengkap</th>
                         <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Customer: activate to sort column ascending" style="width: 74.6719px;">NIP</th>
-                        <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Ship to: activate to sort column ascending" style="width: 56.25px;">No. KTP</th>
-                        <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Base Price: activate to sort column ascending" style="width: 78.125px;">Jenis Kelamin</th>
-                        <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased Price: activate to sort column ascending" style="width: 119.266px;">Tanggal Lahir</th>
                         <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 65.75px;">Foto</th>
                         <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 56.7969px;">Actions</th>
                       </tr>
@@ -51,13 +48,9 @@
                         <td>{{ $pgw->email }}</td>
                         <td>{{ $pgw->nama_lengkap }}</td>
                         <td>{{ $pgw->nip }}</td>
-                        <td>{{ $pgw->no_ktp }}</td>
-                        <td>{{ $pgw->jenis_kelamin }}</td>
-                        <td>{{ $pgw->tanggal_lahir }}</td>
                         <td>{{ $pgw->foto }}</td>
                         <td>
                           <form action="#" method="POST">
-                            <a class="btn btn-warning" href="#">Show</a>
                             <a class="btn btn-primary" href="#">Edit</a>
                             @csrf
                             @method('DELETE')
