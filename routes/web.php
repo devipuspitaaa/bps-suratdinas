@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
-// use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +22,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
-Auth::routes();
+// Auth::routes();
 
 /** Login */
 route::get('/registrasi',[LoginController::class,'registrasi'])->name('registrasi');

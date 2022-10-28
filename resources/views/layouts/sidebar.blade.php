@@ -7,7 +7,7 @@
           <!--change to offline or busy as needed-->
         </div>
         <div class="nav-profile-text d-flex ms-0 mb-3 flex-column">
-          <span class="font-weight-semibold mb-1 mt-2 text-center">Devi</span>
+          <span class="font-weight-semibold mb-1 mt-2 text-center">{{ Auth::user()->name }}</span>
         </div>
       </a>
     </li>
@@ -15,7 +15,6 @@
       <a class="nav-link d-block" href="/">
         <img class="sidebar-brand-logo" width="160px" src="{{ asset('assets/images/1.png') }}" alt="" />
       </a>
-
     </li>
     <li class="nav-item">
       <a class="nav-link" href="/dashboard">
