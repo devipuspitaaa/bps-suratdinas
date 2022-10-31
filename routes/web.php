@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PembuatanSuratController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TamplateController;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -35,3 +39,18 @@ route::get('/logout',[LoginController::class,'logout'])->name('logout');
 /** Pegawai */
 Route::resource('pegawai', PegawaiController::class);
 Route::post("pegawai/update/{id}", [PegawaiController::class, 'update']);
+
+/** Profile */
+//Route::resource('profile', ProfileController::class);
+Route::get('/profile', function () {
+    return view('profile.index');
+});
+
+/** Tamplate Surat*/
+Route::resource('TamplateSurat', TamplateController::class);
+
+/** Surat */
+Route::resource('PembuatanSurat', PembuatanSuratController::class);
+Route::get('/PengajuanSurat', function () {
+    return view('surat.pengajuansurat');
+});

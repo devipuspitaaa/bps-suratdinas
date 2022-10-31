@@ -36,7 +36,7 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="/profile">
         <i class="mdi mdi-account-card-details menu-icon"></i>
         <span class="menu-title">Profile</span>
       </a>
@@ -49,8 +49,8 @@
       </a>
       <div class="collapse" id="surat">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="/pegawai">Pembuatan Surat</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#">Pengajuan Surat</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Pembuatan Surat</a></li>
+          <li class="nav-item"> <a class="nav-link" href="PengajuanSurat">Pengajuan Surat</a></li>
         </ul>
       </div>
     </li>
