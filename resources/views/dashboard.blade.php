@@ -1,26 +1,22 @@
 @extends('template')
 @section('content')
 <div class="content-wrapper pb-0">
-
+  <div class="page-header">
+    <h3 class="page-title"> Dashboard </h3>
+  </div>
   <!-- chart row starts here -->
   <div class="row">
     <div class="col-sm-6 stretch-card grid-margin">
       <div class="card">
         <div class="card-body">
           <div class="d-flex justify-content-between">
-            <div class="card-title"> Customers <small class="d-block text-muted">August 01 - August 31</small>
-            </div>
-            <div class="d-flex text-muted font-20">
-              <i class="mdi mdi-printer mouse-pointer"></i>
-              <i class="mdi mdi-help-circle-outline ms-2 mouse-pointer"></i>
+            <div class="card-title">
+              <h3 class="font-weight-bold mb-0"> Pegawai</h3>
             </div>
           </div>
-          <h3 class="font-weight-bold mb-0"> 2,409 <span class="text-success h5">4,5%<i
-                class="mdi mdi-arrow-up"></i></span>
-          </h3>
-          <span class="text-muted font-13">Avg customers/Day</span>
-          <div class="line-chart-wrapper">
-            <canvas id="linechart" height="80"></canvas>
+          <i class="mdi mdi-account-multiple-outline text-primary mr-0 mr-sm-6 icon-lg"></i>
+          <div>
+            <h5 class="font-weight-bold mb-0">Total User Pegawai :</h5>
           </div>
         </div>
       </div>
@@ -29,180 +25,79 @@
       <div class="card">
         <div class="card-body">
           <div class="d-flex justify-content-between">
-            <div class="card-title"> Conversions <small class="d-block text-muted">August 01 - August 31</small>
-            </div>
-            <div class="d-flex text-muted font-20">
-              <i class="mdi mdi-printer mouse-pointer"></i>
-              <i class="mdi mdi-help-circle-outline ms-2 mouse-pointer"></i>
+            <div class="card-title">
+              <h3 class="font-weight-bold mb-0"> Template Surat</h3>
             </div>
           </div>
-          <h3 class="font-weight-bold mb-0"> 0.40% <span class="text-success h5">0.20%<i
-                class="mdi mdi-arrow-up"></i></span>
-          </h3>
-          <span class="text-muted font-13">Avg customers/Day</span>
-          <div class="bar-chart-wrapper">
-            <canvas id="barchart" height="80"></canvas>
+          <i class="mdi mdi-email text-success mr-0 mr-sm-6 icon-lg"></i>
+          <div>
+            <h5 class="font-weight-bold mb-0">Total Tamplate Surat :</h5>
           </div>
         </div>
       </div>
     </div>
   </div>
   <!-- table row starts here -->
-  <div class="row">
-    <div class="col-xl-8 stretch-card grid-margin">
-      <div class="card">
-        <div class="card-body pb-0">
-          <h4 class="card-title mb-0">Financial management review</h4>
-        </div>
-        <div class="card-body p-0">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title"><h3 class="font-weight-bold mb-0">Histori Pembuatan Surat</h3></h4>
+      <div class="row">
+        <div class="col-12">
           <div class="table-responsive">
-            <table class="table custom-table text-dark">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Sale Rate</th>
-                  <th>Actual</th>
-                  <th>Variance</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <img src="{{ asset('assets/images/faces/face2.jpg') }}" class="me-2" alt="image" /> Jacob Jensen
-                  </td>
-                  <td>
-                    <div class="d-flex">
-                      <span class="pe-2 d-flex align-items-center">85%</span>
-                      <select id="star-1" name="rating" autocomplete="off">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+            <div id="order-listing_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+              <div class="row">
+                <div class="col-sm-12 col-md-6">
+                  <div class="dataTables_length" id="order-listing_length"><label>Show <select name="order-listing_length" aria-controls="order-listing" class="custom-select custom-select-sm form-control">
                         <option value="5">5</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>32,435</td>
-                  <td>40,234</td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="{{ asset('assets/images/faces/face3.jpg') }}" class="me-2" alt="image" /> Cecelia Bradley
-                  </td>
-                  <td>
-                    <div class="d-flex">
-                      <span class="pe-2 d-flex align-items-center">55%</span>
-                      <select id="star-2" name="rating" autocomplete="off">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>4,36780</td>
-                  <td>765728</td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="{{ asset('assets/images/faces/face4.jpg') }}" class="me-2" alt="image" /> Leah Sherman
-                  </td>
-                  <td>
-                    <div class="d-flex">
-                      <span class="pe-2 d-flex align-items-center">23%</span>
-                      <select id="star-3" name="rating" autocomplete="off">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>2300</td>
-                  <td>22437</td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="{{ asset('assets/images/faces/face5.jpg') }}" class="me-2" alt="image" /> Ina Curry
-                  </td>
-                  <td>
-                    <div class="d-flex">
-                      <span class="pe-2 d-flex align-items-center">44%</span>
-                      <select id="star-4" name="rating" autocomplete="off">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>53462</td>
-                  <td>1,75938</td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="{{ asset('assets/images/faces/face7.jpg') }}" class="me-2" alt="image" /> Lida Fitzgerald
-                  </td>
-                  <td>
-                    <div class="d-flex">
-                      <span class="pe-2 d-flex align-items-center">65%</span>
-                      <select id="star-5" name="rating" autocomplete="off">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>67453</td>
-                  <td>765377</td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="{{ asset('assets/images/faces/face2.jpg') }}" class="me-2" alt="image" /> Stella Johnson
-                  </td>
-                  <td>
-                    <div class="d-flex">
-                      <span class="pe-2 d-flex align-items-center">49%</span>
-                      <select id="star-6" name="rating" autocomplete="off">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>43662</td>
-                  <td>96535</td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="{{ asset('assets/images/faces/face9.jpg') }}" class="me-2" alt="image" /> Maria Ortiz
-                  </td>
-                  <td>
-                    <div class="d-flex">
-                      <span class="pe-2 d-flex align-items-center">65%</span>
-                      <select id="star-7" name="rating" autocomplete="off">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </div>
-                  </td>
-                  <td>76555</td>
-                  <td>258546</td>
-                </tr>
-              </tbody>
-            </table>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="-1">All</option>
+                      </select> entries</label></div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <div id="order-listing_filter" class="dataTables_filter"><label><input type="search" class="form-control" placeholder="Search" aria-controls="order-listing"></label></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <table id="order-listing" class="table dataTable no-footer" role="grid" aria-describedby="order-listing_info">
+                    <thead>
+                      <tr role="row">
+                        <th class="sorting_asc" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Order #: activate to sort column descending" aria-sort="ascending" style="width: 60.8125px;">Order #</th>
+                        <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 105.328px;">Jenis Surat</th>
+                        <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Customer: activate to sort column ascending" style="width: 74.6719px;">Nomor Surat</th>
+                        <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Ship to: activate to sort column ascending" style="width: 56.25px;">Perihal</th>
+                        <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Base Price: activate to sort column ascending" style="width: 78.125px;">File PDF</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr role="row" class="odd">
+                        <td class="sorting_1">1</td>
+                        <td>Surat Dinas</td>
+                        <td>B-34775/11/09/2022</td>
+                        <td>Permintaan Data</td>
+                        <td><i class="mdi mdi-file-pdf text-danger"></i></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-md-5">
+                  <div class="dataTables_info" id="order-listing_info" role="status" aria-live="polite">Showing 1 to 10 of 10 entries</div>
+                </div>
+                <div class="col-sm-12 col-md-7">
+                  <div class="dataTables_paginate paging_simple_numbers" id="order-listing_paginate">
+                    <ul class="pagination">
+                      <li class="paginate_button page-item previous disabled" id="order-listing_previous"><a href="#" aria-controls="order-listing" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                      <li class="paginate_button page-item active"><a href="#" aria-controls="order-listing" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                      <li class="paginate_button page-item next disabled" id="order-listing_next"><a href="#" aria-controls="order-listing" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <a class="text-black font-13 d-block pt-2 pb-2 pb-lg-0 font-weight-bold ps-4" href="#">Show more</a>
         </div>
       </div>
     </div>
