@@ -48,6 +48,9 @@ Route::get('/profile', function () {
 
 /** Tamplate Surat*/
 Route::resource('TamplateSurat', TamplateController::class);
+Route::get('/TamplateSurat', function () {
+    return view('tamplateSurat.index');
+});
 
 /** Surat */
 Route::resource('PembuatanSurat', PembuatanSuratController::class);

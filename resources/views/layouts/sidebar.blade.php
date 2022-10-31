@@ -31,7 +31,7 @@
       <div class="collapse" id="masterdata">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="/pegawai">Data Pegawai</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#">Tamplate Surat</a></li>
+          <li class="nav-item"> <a class="nav-link" href="TamplateSurat">Tamplate Surat</a></li>
         </ul>
       </div>
     </li>
