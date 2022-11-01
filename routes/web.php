@@ -5,6 +5,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PembuatanSuratController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TamplateController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
@@ -23,9 +24,10 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// });
+Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
 // Auth::routes();
 
 /** Login */

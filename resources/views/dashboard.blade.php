@@ -2,36 +2,36 @@
 @section('content')
 <div class="content-wrapper pb-0">
   <div class="page-header">
-    <h3 class="page-title"> Dashboard </h3>
+    <h2 class="page-title font-weight-bold mb-0"> Dashboard </h2>
   </div>
   <!-- chart row starts here -->
   <div class="row">
     <div class="col-sm-6 stretch-card grid-margin">
-      <div class="card">
+      <div class="card bg-primary text-white">
         <div class="card-body">
           <div class="d-flex justify-content-between">
-            <div class="card-title">
+            <div class="card-title text-white">
               <h3 class="font-weight-bold mb-0"> Pegawai</h3>
             </div>
           </div>
-          <i class="mdi mdi-account-multiple-outline text-primary mr-0 mr-sm-6 icon-lg"></i>
+          <i class="mdi mdi-account-multiple-outline text-white mr-0 mr-sm-6 icon-lg"></i>
           <div>
-            <h5 class="font-weight-bold mb-0">Total User Pegawai :</h5>
+            <h5 class="font-weight-bold mb-0">Total User Pegawai : {{ $users }}</h5>
           </div>
         </div>
       </div>
     </div>
     <div class="col-sm-6 stretch-card grid-margin">
-      <div class="card">
+      <div class="card bg-danger text-white">
         <div class="card-body">
           <div class="d-flex justify-content-between">
-            <div class="card-title">
+            <div class="card-title text-white">
               <h3 class="font-weight-bold mb-0"> Template Surat</h3>
             </div>
           </div>
-          <i class="mdi mdi-email text-success mr-0 mr-sm-6 icon-lg"></i>
+          <i class="mdi mdi-email text-white mr-0 mr-sm-6 icon-lg"></i>
           <div>
-            <h5 class="font-weight-bold mb-0">Total Tamplate Surat :</h5>
+            <h5 class="font-weight-bold mb-0">Total Tamplate Surat : {{ $template }}</h5>
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@
                   <table id="order-listing" class="table dataTable no-footer" role="grid" aria-describedby="order-listing_info">
                     <thead>
                       <tr role="row">
-                        <th class="sorting_asc" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Order #: activate to sort column descending" aria-sort="ascending" style="width: 60.8125px;">Order #</th>
+                        <th class="sorting_asc" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Order #: activate to sort column descending" aria-sort="ascending" style="width: 60.8125px;">No</th>
                         <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 105.328px;">Jenis Surat</th>
                         <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Customer: activate to sort column ascending" style="width: 74.6719px;">Nomor Surat</th>
                         <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Ship to: activate to sort column ascending" style="width: 56.25px;">Perihal</th>
