@@ -22,6 +22,7 @@
         <span class="menu-title">Dashboard</span>
       </a>
     </li>
+    @if (Auth::user()->role=='admin')
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle="collapse" href="#masterdata" aria-expanded="false" aria-controls="masterdata">
         <i class="mdi mdi-database menu-icon"></i>
@@ -35,6 +36,8 @@
         </ul>
       </div>
     </li>
+    @endif
+    @if (Auth::user()->role=='pegawai')
     <li class="nav-item">
       <a class="nav-link" href="/profile">
         <i class="mdi mdi-account-card-details menu-icon"></i>
@@ -54,5 +57,6 @@
         </ul>
       </div>
     </li>
+    @endif
   </ul>
 </nav>
