@@ -2,7 +2,7 @@
 @section('content')
 <div class="content-wrapper">
     <div class="page-header">
-        <h3 class="page-title"> Profile </h3>
+        <h2 class="page-title font-weight-bold mb-0"> Profile </h2>
     </div>
     <div class="row">
         <div class="col-12">
@@ -27,15 +27,15 @@
                             <div class="d-flex justify-content-between">
                                 <div>
                                     <h4>Username</h4>
-                                    <p>Admin</p>
+                                    <p>AdminSiputnas</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <h4>Name</h4>
-                                    <p>Administrator</p>
+                                    <h4>Nama Lengkap</h4>
+                                    <p>Admin Siputnas</p>
                                 </div>
                                 <div>
                                     <button class="btn btn-primary">Edit</button>
