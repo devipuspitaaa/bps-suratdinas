@@ -5,16 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tamplate extends Model
+class Template extends Model
 {
     use HasFactory;
-    protected $table = "tamplate";
+    protected $table = "template";
     public $timestamps = false;
     protected $primaryKey = 'id';
 
     protected $fillable = [
         'id',
-        'jenis_surat',
         'file_surat',
     ];
+
+    public function surat()
+    {
+        return $this->hasMany(Surat_tugas::class);
+        return $this->hasMany(Surat_pengantar::class);
+        return $this->hasMany(Surat_undangan::class);
+    }
 }

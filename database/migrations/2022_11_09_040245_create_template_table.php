@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTamplateTable extends Migration
+class CreateTemplateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateTamplateTable extends Migration
      */
     public function up()
     {
-        Schema::create('tamplate', function (Blueprint $table) {
+        Schema::create('template', function (Blueprint $table) {
             $table->id();
-            $table->string('jenis_surat');
             $table->string('file_surat');
             $table->timestamps();
         });
@@ -28,6 +27,6 @@ class CreateTamplateTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tamplate');
+        Schema::dropIfExists('template');
     }
 }
