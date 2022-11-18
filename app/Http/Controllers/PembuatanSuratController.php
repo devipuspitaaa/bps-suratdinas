@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PembuatanSuratController extends Controller
 {
@@ -13,7 +14,22 @@ class PembuatanSuratController extends Controller
      */
     public function index()
     {
-        //
+        return view('surat.pembuatansurat');
+    }
+
+
+    public function tambahsurat() {
+
+        $template = DB::table('template_surat')->get();
+        return view('surat.tambahsurat', compact('template'));
+    }
+
+
+    public function isi_surat( $id ) {
+
+        $ambilDataTemplateBerdasarkanId = DB::table('template_surat')->where('id', $id)->first();
+    
+        return view('surat.form-isi-surat', compact('ambilDataTemplateBerdasarkanId'));
     }
 
     /**

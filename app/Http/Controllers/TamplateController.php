@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TamplateController extends Controller
 {
@@ -14,7 +15,36 @@ class TamplateController extends Controller
     public function index()
     {
         //
+        return view('tamplateSurat.index');
     }
+
+
+
+    // view tambah
+    public function tambah() {
+
+        return view('tamplateSurat.tambah');
+    }
+
+
+    // proses simpan
+    public function proses_simpan(Request $request) {
+
+        $struktur_surat = $request->get('struktur-file');
+
+        $data = array(
+
+            'struktur_surat' => $struktur_surat,
+            'jenis_surat'    => $request->get('jenis'),
+            'status_surat'   => $request->get('status'),
+            'is_del'         => 0
+        );
+        DB::table("template_surat")->insert($data);
+        return redirect('TamplateSurat');
+    }
+
+
+
 
     /**
      * Show the form for creating a new resource.
