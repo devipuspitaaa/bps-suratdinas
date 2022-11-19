@@ -26,7 +26,7 @@
               </div>
               <div class="row">
                 <div class="col-sm-12">
-                  <a class="">Link Here . . .</a>
+                <a class="btn btn-primary" href="/TamplateSurat/tambah">Tambah</a>
                   <table id="order-listing" class="table dataTable no-footer" role="grid" aria-describedby="order-listing_info">
                     <thead>
                       <tr role="row">
