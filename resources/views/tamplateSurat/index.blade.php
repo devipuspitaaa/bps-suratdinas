@@ -42,10 +42,16 @@
                       <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $history->jenis_surat }}</td>
-                        <td>{{ $history->status_surat }}</td>
                         <td>
-                          <form action="#" method="POST">
-                            <a class="btn btn-primary" href="#">Edit</a>
+                          @if ($history->status_surat == "1")
+                          Publish
+                          @else
+                          Draf
+                          @endif</td>
+                        <td>
+                          <form action="{{ route('tamplateSurat.destroy',$history->id) }}" method="POST">
+                            <a class="btn btn-primary" href="{{ route('tamplateSurat.edit', $history->id) }}">Edit</a>
+                            @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete</button>
                           </form>

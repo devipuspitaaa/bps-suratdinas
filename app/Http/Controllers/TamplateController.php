@@ -91,7 +91,7 @@ class TamplateController extends Controller
     public function edit($id)
     {
         $historytemplate = PembuatanSurat::find($id);
-        return view('tamplateSurat.edit', compact('$historytemplate'));
+        return view('tamplateSurat.edit', compact('historytemplate'));
     }
 
     /**
@@ -110,7 +110,7 @@ class TamplateController extends Controller
         $historytemplate->save();
 
         return redirect()->route('tamplateSurat.index')
-            ->with('success', 'Data Berhasil Dirubah');
+            ->with('success', 'Data Berhasil Diubah');
     }
 
     /**
