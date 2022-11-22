@@ -31,7 +31,7 @@
           </div>
           <i class="mdi mdi-email text-white mr-0 mr-sm-6 icon-lg"></i>
           <div>
-            <h5 class="font-weight-bold mb-0">Total Tamplate Surat : {{ $template }}</h5>
+            <h5 class="font-weight-bold mb-0">Total Template  Surat : {{ $template }}</h5>
           </div>
         </div>
       </div>
