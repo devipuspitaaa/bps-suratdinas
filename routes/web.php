@@ -56,10 +56,10 @@ Route::post('/TamplateSurat/simpan-surat', [TamplateController::class, 'proses_s
 
 
 /** Surat */
-Route::resource('PembuatanSurat', PembuatanSuratController::class);
+// Route::resource('PembuatanSurat', PembuatanSuratController::class);
 Route::get('/PengajuanSurat', function () {
     return view('surat.pengajuansurat');
 });
 
-Route::get('/tambahsurat', [PembuatanSuratController::class, 'tambahsurat']);
+Route::get('/PembuatanSurat', [PembuatanSuratController::class, 'tambahsurat']);
 Route::get('/isi-surat/{id}', [PembuatanSuratController::class, 'isi_surat']);
