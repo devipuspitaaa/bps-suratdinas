@@ -2,7 +2,7 @@
 @section('content')
 <div class="content-wrapper">
   <div class="page-header">
-    <h3 class="page-title"> Master Data Pegawai </h3>
+    <h1 class="page-title">Data Pegawai </h1>
   </div>
   <div class="card">
     <div class="card-body">

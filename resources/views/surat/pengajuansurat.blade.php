@@ -2,7 +2,7 @@
 @section('content')
 <div class="content-wrapper">
     <div class="page-header">
-        <h3 class="page-title"> Pengajuan Surat </h3>
+        <h1 class="page-title"> Pengajuan Surat </h1>
     </div>
     <div class="card">
         <div class="card-body text-center">

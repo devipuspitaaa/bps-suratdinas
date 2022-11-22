@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\PembuatanSurat;
 
 class TamplateController extends Controller
 {
@@ -14,21 +15,24 @@ class TamplateController extends Controller
      */
     public function index()
     {
-        //
-        return view('tamplateSurat.index');
+        $historytemplate = PembuatanSurat::all();
+        return view('tamplateSurat.index', compact('historytemplate'));
+        // return view('tamplateSurat.index');
     }
 
 
 
     // view tambah
-    public function tambah() {
+    public function tambah()
+    {
 
         return view('tamplateSurat.tambah');
     }
 
 
     // proses simpan
-    public function proses_simpan(Request $request) {
+    public function proses_simpan(Request $request)
+    {
 
         $struktur_surat = $request->get('struktur-file');
 
@@ -86,7 +90,8 @@ class TamplateController extends Controller
      */
     public function edit($id)
     {
-        //
+        $historytemplate = PembuatanSurat::find($id);
+        return view('tamplateSurat.edit', compact('$historytemplate'));
     }
 
     /**
@@ -98,7 +103,14 @@ class TamplateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $historytemplate = PembuatanSurat::find($id);
+        $historytemplate->struktur_surat = $request->struktur_surat;
+        $historytemplate->jenis_surat = $request->jenis_surat;
+        $historytemplate->status_surat = $request->status_surat;
+        $historytemplate->save();
+
+        return redirect()->route('tamplateSurat.index')
+            ->with('success', 'Data Berhasil Dirubah');
     }
 
     /**
@@ -109,6 +121,8 @@ class TamplateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        PembuatanSurat::find($id)->delete();
+        return redirect()->route('tamplateSurat.index')
+            ->with('success', 'Data Berhasil Dihapus');
     }
 }
