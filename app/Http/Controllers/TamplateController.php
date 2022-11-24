@@ -44,7 +44,7 @@ class TamplateController extends Controller
             'is_del'         => 0
         );
         DB::table("template_surat")->insert($data);
-        return redirect('TamplateSurat');
+        return redirect('tamplateSurat');
     }
 
 

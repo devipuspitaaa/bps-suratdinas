@@ -2,14 +2,13 @@
 @section('content')
 <div class="content-wrapper">
     <div class="page-header">
-        <h3 class="page-title"> Pembuatan Surat </h3>
+        <h1 class="page-title"> Tamplate Surat </h1>
     </div>
     <div class="card">
-        <div class="card-body text-center">
-
+        <div class="card-body">
+            <h4 class="card-title">Data Tamplate Surat</h4>
             <div class="row">
                 <div class="col-12">
-                <a class="btn btn-primary" href="/tambahSurat">Tambah</a>
                     <div class="table-responsive">
                         <div id="order-listing_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                             <div class="row">
@@ -27,12 +26,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-sm-12">
+                                    <a class="btn btn-primary" href="/tambahSurat">Tambah</a>
                                     <table id="order-listing" class="table dataTable no-footer" role="grid" aria-describedby="order-listing_info">
                                         <thead>
                                             <tr role="row">
-                                                <th class="sorting_asc" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Order #: activate to sort column descending" style="width: 60.8125px;">Order </th>
+                                                <th class="sorting_asc" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Order #: activate to sort column descending" style="width: 60.8125px;">No</th>
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 105.328px;">Jenis Surat</th>
-                                                <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Customer: activate to sort column ascending" style="width: 74.6719px;">File Surat</th>
+                                                <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Customer: activate to sort column ascending" style="width: 74.6719px;">Status Surat</th>
+                                                <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 56.7969px;">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -40,7 +41,7 @@
                                                 <td>1</td>
                                                 <td>Jenis Surat</td>
                                                 <td>File Surat</td>
-                                                
+
                                             </tr>
                                         </tbody>
                                     </table>
