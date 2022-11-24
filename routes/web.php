@@ -49,12 +49,11 @@ Route::get('/profile', function () {
 });
 
 /** Tamplate Surat*/
-// Route::resource('TamplateSurat', TamplateController::class);
-Route::get('/TamplateSurat', [TamplateController::class, 'index']);
-Route::post("TamplateSurat/update/{id}", [TamplateController::class, 'update']);
+Route::resource('tamplateSurat', TamplateController::class);
+// Route::get('/tamplateSurat', [TamplateController::class, 'index']);
+Route::post("tamplateSurat/update/{id}", [TamplateController::class, 'update']);
 Route::get('/TamplateSurat/tambah', [TamplateController::class, 'tambah']);
 Route::post('/TamplateSurat/simpan-surat', [TamplateController::class, 'proses_simpan']);
-
 
 /** Surat */
 // Route::resource('PembuatanSurat', PembuatanSuratController::class);
