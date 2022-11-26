@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PembuatanSurat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class PembuatanSuratController extends Controller
 {
@@ -30,6 +32,13 @@ class PembuatanSuratController extends Controller
         $ambilDataTemplateBerdasarkanId = DB::table('template_surat')->where('id', $id)->first();
     
         return view('surat.form-isi-surat', compact('ambilDataTemplateBerdasarkanId'));
+    }
+
+    public function cetak_surat( $id ){
+        // $template = PembuatanSurat::all();
+        $template = PembuatanSurat::where('id', $id)->first();
+        $pdf = PDF::loadview('surat.cetak-surat',['template_surat'=>$template]);
+        return $pdf->stream();
     }
 
     /**

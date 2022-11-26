@@ -63,3 +63,4 @@ Route::get('/PengajuanSurat', function () {
 
 Route::get('/PembuatanSurat', [PembuatanSuratController::class, 'tambahsurat']);
 Route::get('/isi-surat/{id}', [PembuatanSuratController::class, 'isi_surat']);
+Route::get('surat/cetak-surat/{id}', [PembuatanSuratController::class, 'cetak_surat']);

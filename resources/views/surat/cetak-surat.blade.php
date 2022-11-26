@@ -1,33 +1,23 @@
-@extends('template')
-@section('content')
-<div class="content-wrapper">
-  <div class="page-header">
-    <h1 class="page-title"> {{ $ambilDataTemplateBerdasarkanId->jenis_surat }} </h1>
-  </div>
-  <div class="card">
-    <div class="card-body">
-      <h4>Header</h4>
-      <label>Atur posisi header surat / template</label>
-      <form action="{{ url('TamplateSurat/simpan-surat') }}" method="post">
-        @csrf
-        <hr>
-        <textarea id="editor" name="struktur-file">{{ $ambilDataTemplateBerdasarkanId->struktur_surat }}</textarea>
-        <hr>
-        <div class="form-group">
-            <button type="submit" class="btn btn-block btn-primary">Tambahkan dan Simpan</button>
-            <a class="btn btn-primary" href="/PembuatanSurat">Kembali</a>
-            <a class="btn btn-primary" href='/surat/cetak-surat/{{$ambilDataTemplateBerdasarkanId->id}}'>Cetak Surat</a>
+<!DOCTYPE html>
+
+<head>
+</head>
+
+<body>
+    @section('content')
+    <div class="content-wrapper">
+        <div class="card">
+            <div class="card-body">
+                <hr>
+                <textarea id="editor" name="struktur-file">{{ $template_surat->struktur_surat }}</textarea>
+                <hr>
+            </div>
         </div>
-      </form>
     </div>
-  </div>    
-</div>    
-
-
-<!-- <script src="https://cdn.ckeditor.com/ckeditor5/35.3.1/classic/ckeditor.js"></script> -->
-<script src="https://cdn.ckeditor.com/ckeditor5/35.3.1/super-build/ckeditor.js"></script>
-<script>
-            // This sample still does not showcase all CKEditor 5 features (!)
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/35.3.1/classic/ckeditor.js"></script> -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.3.1/super-build/ckeditor.js"></script>
+    <script>
+        // This sample still does not showcase all CKEditor 5 features (!)
             // Visit https://ckeditor.com/docs/ckeditor5/latest/features/index.html to browse all the features.
             CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
                 // https://ckeditor.com/docs/ckeditor5/latest/features/toolbar/toolbar.html#extended-toolbar-configuration-format
@@ -169,6 +159,9 @@
                     'MathType'
                 ]
             });
-        </script>
+    </script>
+
+</body>
+
 
 @endsection
