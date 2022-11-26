@@ -36,7 +36,7 @@
         <hr>
         <div class="form-group">
             <button type="submit" class="btn btn-block btn-primary">Tambahkan dan Simpan</button>
-            <a class="btn btn-primary" href="/TamplateSurat">Kembali</a>
+            <a class="btn btn-primary" href="/tamplateSurat">Kembali</a>
         </div>
       </form>
     </div>
