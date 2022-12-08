@@ -101,16 +101,26 @@ class TamplateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function proses_update(Request $request, $id)
     {
-        $historytemplate = PembuatanSurat::find($id);
-        $historytemplate->struktur_surat = $request->struktur_surat;
-        $historytemplate->jenis_surat = $request->jenis_surat;
-        $historytemplate->status_surat = $request->status_surat;
-        $historytemplate->save();
+        // $historytemplate = PembuatanSurat::find($id);
+        // $historytemplate->struktur_surat = $request->struktur_file;
+        // $historytemplate->jenis_surat = $request->jenis;
+        // $historytemplate->status_surat = $request->status;
+        // $historytemplate->save();
 
-        return redirect()->route('tamplateSurat.index')
-            ->with('success', 'Data Berhasil Diubah');
+        $struktur_surat = $request->get('struktur_file');
+
+        $data = array(
+            'struktur_surat' => $struktur_surat,
+            'jenis_surat'    => $request->get('jenis'),
+            'status_surat'   => $request->get('status'),
+        );
+        DB::table("template_surat")->where('id', $id)->update($data);
+        return redirect('tamplateSurat');
+
+        // return redirect()->route('tamplateSurat.index')
+        //     ->with('success', 'Data Berhasil Diubah');
     }
 
     /**

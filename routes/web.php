@@ -51,9 +51,10 @@ Route::get('/profile', function () {
 /** Tamplate Surat*/
 Route::resource('tamplateSurat', TamplateController::class);
 // Route::get('/tamplateSurat', [TamplateController::class, 'index']);
-Route::post("tamplateSurat/update/{id}", [TamplateController::class, 'update']);
+// Route::post("tamplateSurat/update/{id}", [TamplateController::class, 'update']);
 Route::get('/TamplateSurat/tambah', [TamplateController::class, 'tambah']);
 Route::post('/TamplateSurat/simpan-surat', [TamplateController::class, 'proses_simpan']);
+Route::post('/TamplateSurat/update-surat/{id}', [TamplateController::class, 'proses_update']);
 
 /** Surat */
 Route::resource('PembuatanSurat', PembuatanSuratController::class);
@@ -64,3 +65,6 @@ Route::get('/PengajuanSurat', function () {
 Route::get('/tambahSurat', [PembuatanSuratController::class, 'tambahsurat']);
 Route::get('/isi-surat/{id}', [PembuatanSuratController::class, 'isi_surat']);
 Route::get('surat/cetak-surat/{id}', [PembuatanSuratController::class, 'cetak_surat']);
+
+
+Route::post('/pembuatansurat/simpan-surat', [PembuatanSuratController::class, 'proses_simpan']);

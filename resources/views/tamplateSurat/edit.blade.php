@@ -9,7 +9,7 @@
       <h4>Header</h4>
       <label>Atur posisi header surat / template</label>
 
-      <form action="{{ url('TamplateSurat/simpan-surat') }}" method="post">
+      <form action="{{ url('TamplateSurat/update-surat/'. $historytemplate->id) }}" method="post">
         @csrf
 
         
@@ -25,13 +25,13 @@
                 <div class="form-group">
                     <label>Status Surat</label>
                     <select value="{{ $historytemplate->status_surat }}" class="form-control" name="status">
-                        <option value="0">Draf</option>
-                        <option value="1">Publish</option>
+                        <option value="0" {{ $historytemplate->status_surat == "0" ? 'selected="selected"' : '' }}>Draf</option>
+                        <option value="1" {{ $historytemplate->status_surat == "1" ? 'selected="selected"' : '' }}>Publish</option>
                     </select>
                 </div>
             </div>
         </div>
-        <textarea id="editor" name="struktur-file">{{ $historytemplate->struktur_surat }}</textarea>
+        <textarea id="editor" name="struktur_file">{{ $historytemplate->struktur_surat }}</textarea>
 
         <hr>
         <div class="form-group">

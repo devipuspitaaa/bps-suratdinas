@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PembuatanSurat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use PDF;
 
@@ -30,9 +31,26 @@ class PembuatanSuratController extends Controller
     public function isi_surat( $id ) {
 
         $ambilDataTemplateBerdasarkanId = DB::table('template_surat')->where('id', $id)->first();
-    
         return view('surat.form-isi-surat', compact('ambilDataTemplateBerdasarkanId'));
     }
+
+
+
+    public function proses_simpan( Request $request) {
+
+        $id = $request->get('id');
+        $data = array(
+
+            'user_id'           => Auth::id(),
+            'template_id'       => $id,
+            'file_historysurat' => $request->struktur_file
+        );
+
+        DB::table("history_surat")->insert( $data );
+        return redirect('PembuatanSurat');
+    }
+
+
 
     public function cetak_surat( $id ){
         // $template = PembuatanSurat::all();
