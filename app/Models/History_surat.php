@@ -17,10 +17,10 @@ class History_surat extends Model
         'file_historysurat',
     ];
 
-    public function history()
-    {
-        return $this->belongsToMany(Surat_tugas::class);
-        return $this->belongsToMany(Surat_pengantar::class);
-        return $this->belongsToMany(Surat_undangan::class);
-    }
+    // public function history()
+    // {
+    //     return $this->belongsToMany(Surat_tugas::class);
+    //     return $this->belongsToMany(Surat_pengantar::class);
+    //     return $this->belongsToMany(Surat_undangan::class);
+    // }
 }

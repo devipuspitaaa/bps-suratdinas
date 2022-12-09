@@ -17,7 +17,6 @@ class TamplateController extends Controller
     {
         $historytemplate = PembuatanSurat::all();
         return view('tamplateSurat.index', compact('historytemplate'));
-        // return view('tamplateSurat.index');
     }
 
 

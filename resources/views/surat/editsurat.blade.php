@@ -2,39 +2,21 @@
 @section('content')
 <div class="content-wrapper">
   <div class="page-header">
-    <h3 class="page-title"> Tamplate Surat </h3>
+    <h1 class="page-title"> {{ $ambilDataTemplateBerdasarkanId->jenis_surat }} </h1>
   </div>
   <div class="card">
     <div class="card-body">
       <h4>Header</h4>
       <label>Atur posisi header surat / template</label>
-
-      <form action="{{ url('TamplateSurat/update-tamplate/'. $historytemplate->id) }}" method="post">
-        @csrf  
+      <form action="{{ url('Surat/update-surat/'. $historysurat->id) }}" method="post">
+        @csrf
         <hr>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Jenis Surat</label>
-                    <input type="text" name="jenis" class="form-control" value="{{ $historytemplate->jenis_surat }}" required=""/>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Status Surat</label>
-                    <select value="{{ $historytemplate->status_surat }}" class="form-control" name="status">
-                        <option value="0" {{ $historytemplate->status_surat == "0" ? 'selected="selected"' : '' }}>Draf</option>
-                        <option value="1" {{ $historytemplate->status_surat == "1" ? 'selected="selected"' : '' }}>Publish</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <textarea id="editor" name="struktur_file">{{ $historytemplate->struktur_surat }}</textarea>
-
+        <textarea id="editor" name="struktur_file">{{ $historysurat->file_historysurat }}</textarea>
         <hr>
         <div class="form-group">
             <button type="submit" class="btn btn-block btn-primary">Tambahkan dan Simpan</button>
-            <a class="btn btn-primary" href="/tamplateSurat">Kembali</a>
+            <a class="btn btn-primary" href="/PembuatanSurat">Kembali</a>
+            {{-- <a class="btn btn-primary" href='/surat/cetak-surat/{{$ambilDataTemplateBerdasarkanId->id}}'>Cetak Surat</a> --}}
         </div>
       </form>
     </div>

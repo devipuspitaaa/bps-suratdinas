@@ -52,8 +52,8 @@
       </a>
       <div class="collapse" id="surat">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="PembuatanSurat">Pembuatan Surat</a></li>
-          <li class="nav-item"> <a class="nav-link" href="PengajuanSurat">Pengajuan Surat</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/PembuatanSurat">Pembuatan Surat</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/PengajuanSurat">Pengajuan Surat</a></li>
         </ul>
       </div>
     </li>

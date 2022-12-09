@@ -32,18 +32,28 @@
                                             <tr role="row">
                                                 <th class="sorting_asc" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Order #: activate to sort column descending" style="width: 60.8125px;">No</th>
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Purchased On: activate to sort column ascending" style="width: 105.328px;">Jenis Surat</th>
-                                                <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Customer: activate to sort column ascending" style="width: 74.6719px;">Status Surat</th>
+                                                {{-- <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Customer: activate to sort column ascending" style="width: 74.6719px;">Status Surat</th> --}}
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 56.7969px;">Actions</th>
                                             </tr>
                                         </thead>
+                                        <?php $no = 1; ?>
+                                        @foreach ($historysurat as $hs)
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Jenis Surat</td>
-                                                <td>File Surat</td>
-
+                                                <td>{{ $no++ }}</td>
+                                                <td>{{ $hs->template_id }}</td>
+                                                {{-- <td>{{ $hs->file_historysurat }}</td> --}}
+                                                <td>
+                                                  <form action="{{ route('surat.destroy',$hs->id) }}" method="POST">
+                                                    <a class="btn btn-primary" href="{{ route('surat.edit',$hs->id) }}">Edit</a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                  </form>
+                                                </td>
                                             </tr>
                                         </tbody>
+                                        @endforeach
                                     </table>
                                 </div>
                             </div>
