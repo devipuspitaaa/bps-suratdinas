@@ -2,7 +2,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="icon" type="image/png" href="{{ asset('assets/iamges/bps.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/bps.png') }}">
     <title>SIPUTNAS</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css') }}">

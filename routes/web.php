@@ -4,8 +4,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PembuatanSuratController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\NoPengantarController;
 use App\Http\Controllers\TamplateController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
@@ -69,3 +71,10 @@ Route::get('/isi-surat/{id}', [PembuatanSuratController::class, 'isi_surat']);
 Route::get('surat/cetak-surat/{id}', [PembuatanSuratController::class, 'cetak_surat']);
 
 
+//nomor surat
+
+Route::resource('/nopengantar', NoPengantarController::class);
+
+
+// pengaturan kode
+Route::get('/pengaturan', [SettingController::class, 'index']);

@@ -35,7 +35,20 @@ class PembuatanSuratController extends Controller
     {
 
         $ambilDataTemplateBerdasarkanId = DB::table('template_surat')->where('id', $id)->first();
-        return view('surat.form-isi-surat', compact('ambilDataTemplateBerdasarkanId'));
+
+        // ekstrak nilai surat
+
+        $jumlahdigit = 3;
+        $urutan = sprintf("%0". $jumlahdigit."s", $ambilDataTemplateBerdasarkanId->kode_2);
+
+        $isi = $ambilDataTemplateBerdasarkanId;
+
+        $kode_surat = $isi->kode_1 . $urutan . $isi->kode_3 . $isi->kode_4 . $isi->kode_5;
+
+        $surat = $ambilDataTemplateBerdasarkanId->struktur_surat;
+        $ekstraksi = str_replace('[kode]', $kode_surat, $surat);
+
+        return view('surat.form-isi-surat', compact('ambilDataTemplateBerdasarkanId', 'ekstraksi'));
     }
 
 
@@ -52,6 +65,32 @@ class PembuatanSuratController extends Controller
         );
 
         DB::table("history_surat")->insert($data);
+
+        // increment (menambah urutan surat)
+        /**
+         * 1. Ambil informasi template surat urutan ke berapa 
+         * 2. Urutan lama (data lama)
+         * 3. Urutan baru dengan rumus (urutan_baru = urutan_lama + 1)
+         * 4. Update template surat berdasarkan id_surat atau $id
+         */
+
+         // @TODO 1 : Info surat
+         $infotemplatesurat = DB::table("template_surat")->where("id", $id)->first();
+
+         // @TODO 2 : urutan lama
+         $urutan_lama = $infotemplatesurat->kode_2;
+
+         // @TODO 3 : urutan baru
+         $urutan_baru = $urutan_lama + 1;
+
+         // @TODO 4 : update
+         $updateurutan = array(
+
+            'kode_2'    => $urutan_baru
+         );
+         DB::table("template_surat")->where("id", $id)->update($updateurutan);
+
+
         return redirect('PembuatanSurat');
     }
 

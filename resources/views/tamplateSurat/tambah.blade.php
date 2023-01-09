@@ -29,6 +29,47 @@
                 </div>
             </div>
         </div>
+
+        <!-- Setting kode surat -->
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="">Kode 1</label>
+                    <input type="text" name="kode_1" class="form-control" placeholder="..." required="">
+                    <small>Masukkan form</small>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="">Kode 2</label>
+                    <input type="text" name="kode_2" class="form-control" placeholder="..." required="">
+                    <small>Masukkan form</small>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="">Kode 3</label>
+                    <input type="text" name="kode_3" class="form-control" placeholder="..." required="">
+                    <small>Masukkan form</small>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="">Kode 4</label>
+                    <input type="text" name="kode_4" class="form-control" placeholder="...">
+                    <small>Masukkan form</small>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="">Kode 5</label>
+                    <input type="text" name="kode_5" class="form-control" placeholder="...">
+                    <small>Masukkan form</small>
+                </div>
+            </div>
+        </div>
+
+
         <hr>
         <textarea id="editor" name="struktur-file"></textarea>
 

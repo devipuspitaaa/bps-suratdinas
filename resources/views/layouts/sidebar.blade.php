@@ -36,6 +36,23 @@
         </ul>
       </div>
     </li>
+
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#kode" aria-expanded="false" aria-controls="kode">
+        <i class="mdi mdi-database menu-icon"></i>
+        <span class="menu-title">Pengaturan</span>
+        <i class="menu-arrow"></i>
+      </a>
+      
+      <div class="collapse" id="kode">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="/pengaturan?halaman=pengantar">Atur Kode Pengantar</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/pengaturan?halaman=tugas">Atur Kode Tugas</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/pengaturan?halaman=undangan">Atur Kode Undangan</a></li>
+        </ul>
+      </div>
+
+    </li>
     @endif
     @if (Auth::user()->role=='pegawai')
     <li class="nav-item">

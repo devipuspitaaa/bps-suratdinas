@@ -40,6 +40,11 @@ class TamplateController extends Controller
             'struktur_surat' => $struktur_surat,
             'jenis_surat'    => $request->get('jenis'),
             'status_surat'   => $request->get('status'),
+            'kode_1'    => $request->get('kode_1'),
+            'kode_2'    => $request->get('kode_2'),
+            'kode_3'    => $request->get('kode_3'),
+            'kode_4'    => $request->get('kode_4'),
+            'kode_5'    => $request->get('kode_5'),
             'is_del'         => 0
         );
         DB::table("template_surat")->insert($data);
@@ -114,6 +119,11 @@ class TamplateController extends Controller
             'struktur_surat' => $struktur_surat,
             'jenis_surat'    => $request->get('jenis'),
             'status_surat'   => $request->get('status'),
+            'kode_1'    => $request->get('kode_1'),
+            'kode_2'    => $request->get('kode_2'),
+            'kode_3'    => $request->get('kode_3'),
+            'kode_4'    => $request->get('kode_4'),
+            'kode_5'    => $request->get('kode_5'),
         );
         DB::table("template_surat")->where('id', $id)->update($data);
         return redirect('tamplateSurat');

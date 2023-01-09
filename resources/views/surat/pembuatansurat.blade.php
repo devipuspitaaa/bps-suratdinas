@@ -45,7 +45,7 @@
                                                 {{-- <td>{{ $hs->file_historysurat }}</td> --}}
                                                 <td>
                                                   <form action="#" method="POST">
-                                                    <a class="btn btn-primary" href="{{ route('Surat.editsurat',$hs->id) }}">Edit</a>
+                                                    <a class="btn btn-primary" href="#">Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger">Delete</button>

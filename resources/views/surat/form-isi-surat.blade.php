@@ -11,7 +11,7 @@
       <form action="{{ url('pembuatansurat/simpan-surat?id='. $ambilDataTemplateBerdasarkanId->id ) }}" method="post">
         @csrf
         <hr>
-        <textarea id="editor" name="struktur_file">{{ $ambilDataTemplateBerdasarkanId->struktur_surat }}</textarea>
+        <textarea id="editor" name="struktur_file">{{ $ekstraksi }}</textarea>
         <hr>
         <div class="form-group">
             <button type="submit" class="btn btn-block btn-primary">Tambahkan dan Simpan</button>
